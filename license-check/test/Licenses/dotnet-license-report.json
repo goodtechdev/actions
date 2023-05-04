@@ -1,0 +1,20 @@
+[
+    {
+        "PackageName": "NUnit",
+        "PackageVersion": "3.13.3",
+        "PackageUrl": "https://nunit.org/",
+        "Copyright": "Copyright (c) 2022 Charlie Poole, Rob Prouse",
+        "Authors": [
+            "Charlie Poole",
+            " Rob Prouse"
+        ],
+        "Description": "NUnit features a fluent assert syntax, parameterized, generic and theory tests and is user-extensible.\r\n\r\nThis package includes the NUnit 3 framework assembly, which is referenced by your tests. You will need to install version 3 of the nunit3-console program or a third-party runner that supports NUnit 3 in order to execute tests. Runners intended for use with NUnit 2.x will not run NUnit 3 tests correctly.\r\n\r\nSupported platforms:\r\n- .NET Framework 3.5+\r\n- .NET Standard 2.0+",
+        "LicenseUrl": "https://www.nuget.org/packages/NUnit/3.13.3/License",
+        "LicenseType": "LICENSE.txt",
+        "Repository": {
+            "Type": "git",
+            "Url": "https://github.com/nunit/nunit",
+            "Commit": ""
+        }
+    }
+]

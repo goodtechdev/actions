@@ -1,0 +1,13 @@
+{
+  "permissive": [
+    "MIT License",
+    "BSD License",
+    "Apache Software License"
+  ],
+  "copyleft": [
+    "GNU Lesser General Public License v3 or later (LGPLv3+)"
+  ],
+  "packages": [
+    "asyncua"
+  ]
+}

@@ -1,0 +1,34 @@
+name: "Licence check"
+description: "Verifies that licences of pip packages present in the calling workflow are compliant"
+inputs:
+  entrypoint:
+    description: "Path to folder where allowed_licenses.json is located"
+    required: false
+    default: "."
+  create-report:
+    description: "Create a report of the licenses found"
+    required: false
+    default: "false"
+runs:
+  using: "composite"
+  steps:
+    - name: Install packages
+      run: pip install -U pip-licenses
+      shell: bash
+
+    - name: Create licenses.json
+      run: pip-licenses --with-urls --order=license --format=json --output-file=licenses.json
+      shell: bash
+      working-directory: ${{inputs.entrypoint}}
+
+    - name: Check licences
+      run: python3 $GITHUB_ACTION_PATH/license_check.py
+      shell: bash
+      working-directory: ${{inputs.entrypoint}}
+
+    - name: Upload license report
+      if: ${{ inputs.create-report == 'true' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: license-report
+        path: ${{inputs.entrypoint}}/licenses.json
